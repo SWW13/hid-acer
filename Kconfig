@@ -1,0 +1,4 @@
+config Synaptics
+    tristate "Synaptics HID quirks"
+    ---help---
+      Help message of Synaptics
