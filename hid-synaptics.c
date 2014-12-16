@@ -71,6 +71,7 @@ static void synaptics_remove(struct hid_device *hdev)
 static const struct hid_device_id synaptics_devices[] = {
 	{ HID_USB_DEVICE(USB_VENDOR_ID_SYNAPTICS, USB_VENDOR_ID_SYNAPTICS_KEYBOARD),
 		 .driver_data = 0x0},
+	{ }
 };
 MODULE_DEVICE_TABLE(hid, synaptics_devices);
 
