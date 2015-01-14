@@ -14,7 +14,7 @@ ccflags-y += $(DEBFLAGS)
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
 
-obj-<	:= hid-synaptics.o
+obj-m	:= hid-synaptics.o
 
 else
 
