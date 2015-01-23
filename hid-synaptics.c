@@ -157,7 +157,7 @@ static int synaptics_probe(struct hid_device *hdev, const struct hid_device_id *
 	printk(KERN_ALERT "synaptics_probe\n");
 #endif
 
-	hdev->quirks |= id->driver_data;
+	//hdev->quirks |= id->driver_data;
 
 	ret = hid_parse(hdev);
 	if (ret) {
@@ -204,22 +204,6 @@ static struct hid_driver synaptics_driver = {
 	.remove = synaptics_remove,
 };
 
-static int __init synaptics_init(void)
-{
-#ifdef DEBUG_SYNAPTICS
-	printk(KERN_ALERT "synaptics_init\n");
-#endif
-	return hid_register_driver(&synaptics_driver);
-}
+module_hid_driver(synaptics_driver);
 
-static void __exit synaptics_exit(void)
-{
-#ifdef DEBUG_SYNAPTICS
-	printk(KERN_ALERT "synaptics_exit\n");
-#endif
-	hid_unregister_driver(&synaptics_driver);
-}
-
-module_init(synaptics_init);
-module_exit(synaptics_exit);
 MODULE_LICENSE("GPL");
