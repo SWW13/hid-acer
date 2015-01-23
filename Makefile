@@ -1,5 +1,5 @@
 # Comment/uncomment the following line to disable/enable debugging
-#DEBUG = y
+DEBUG = y
 
 
 # Add your debugging flag (or not) to CFLAGS
@@ -14,7 +14,7 @@ ccflags-y += $(DEBFLAGS)
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
 
-obj-<	:= hid-synaptics.o
+obj-m	:= hid-synaptics.o
 
 else
 
