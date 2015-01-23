@@ -16,8 +16,6 @@
 #include <linux/module.h>
 #include <linux/usb.h>
 
-#define DEBUG_SYNAPTICS
-
 /* Synaptics keyboards (USB ID 06cb:2968) e.g. in Acer SW5-012
  * have the following issue:
  * - The report descriptor specifies an excessively large number of consumer
@@ -141,12 +139,6 @@ unsigned int *rsize)
 static int synaptics_probe(struct hid_device *hdev, const struct hid_device_id *id)
 {
 	int ret;
-
-#ifdef DEBUG_SYNAPTICS
-	printk(KERN_ALERT "synaptics_probe\n");
-#endif
-
-	//hdev->quirks |= id->driver_data;
 
 	ret = hid_parse(hdev);
 	if (ret) {
