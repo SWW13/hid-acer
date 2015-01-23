@@ -1,7 +1,7 @@
 /*
  *  HID driver for synaptics devices
  *
- *  Copyright (c) 2014 Simon Wörner
+ *  Copyright (c) 2015 Simon Wörner
  */
 
 /*
@@ -105,8 +105,8 @@ static __u8 synaptics_kbd_rdesc_fixed[] = {
 	0xA1, 0x01,		// (MAIN)   COLLECTION (Application)
 	0x85, 0x04,		//   (GLOBAL) REPORT_ID 0x04 (4)
 	0x19, 0x00,		//   (LOCAL)  USAGE_MINIMUM 0x00
-	0x2A, 0xFF,0x00,	//   (LOCAL)  USAGE_MAXIMUM 0x00FF, was 0xFFFF
-	0x26, 0xFF,0x00,	//   (GLOBAL) LOGICAL_MAXIMUM 0x00FF, was 0xFFFF
+	0x2A, 0xFF, 0x00,	//   (LOCAL)  USAGE_MAXIMUM 0x00FF, was 0xFFFF
+	0x26, 0xFF, 0x00,	//   (GLOBAL) LOGICAL_MAXIMUM 0x00FF, was 0xFFFF
 	0x75, 0x08,		//   (GLOBAL) REPORT_SIZE 0x08 (8)
 	0x95, 0x02,		//   (GLOBAL) REPORT_COUNT 0x02 (2)
 	0x81, 0x02,		//   (MAIN)   INPUT 0x02
@@ -193,7 +193,6 @@ static struct hid_driver synaptics_driver = {
 	.probe = synaptics_probe,
 	.remove = synaptics_remove,
 };
-
 module_hid_driver(synaptics_driver);
 
 MODULE_LICENSE("GPL");
