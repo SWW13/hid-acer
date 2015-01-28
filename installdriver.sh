@@ -2,5 +2,5 @@
 
 #install synaptics driver
 
-rmmod ./hid-synaptics.ko; rmmod usbhid;
-insmod ./hid-synaptics.ko ; modprobe usbhid;
+rmmod ./hid-acer.ko; rmmod usbhid;
+insmod ./hid-acer.ko ; modprobe usbhid;
