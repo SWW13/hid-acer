@@ -26,7 +26,7 @@
 * The byte replace in the descriptor below fixes the size.
 */
 
-#define ACER_KBD_RDESC_ORIG_SIZE	376
+#define ACER_KBD_RDESC_ORIG_SIZE	188
 #define ACER_KBD_RDESC_CHECK_POS	(150 * sizeof(__u8))
 #define ACER_KBD_RDESC_CHECK_DATA	0x2AFFFF150026FFFF
 #define ACER_KBD_RDESC_FIX_POS1		152
@@ -35,16 +35,16 @@
 static __u8 *acer_kbd_report_fixup(struct hid_device *hdev, __u8 *rdesc,
 		unsigned int *rsize)
 {
-	hid_dbg(hdev, "fixup: rdesc = %#08x, rsize = %i\n", rdesc, *rsize);
-	hid_dbg(hdev, "fixup: check_pos = %#08x\n", rdesc + ACER_KBD_RDESC_CHECK_POS);
+	hid_info(hdev, "fixup: rdesc = %#08x, rsize = %i\n", rdesc, *rsize);
+	hid_info(hdev, "fixup: check_pos = %#08x\n", rdesc + ACER_KBD_RDESC_CHECK_POS);
 
 	/* check for invalid descriptor */
 	if (*rsize == ACER_KBD_RDESC_ORIG_SIZE) {
 		__u64 check = *(__u64 *)(rdesc + ACER_KBD_RDESC_CHECK_POS);
 
-		hid_dbg(hdev, "fixup: ACER_KBD_RDESC_CHECK_DATA = %#016Xll, check = %#016Xll\n", check, ACER_KBD_RDESC_CHECK_DATA);
-		hid_dbg(hdev, "fixup: fixpos1 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS1]);
-		hid_dbg(hdev, "fixup: fixpos2 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS2]);
+		hid_info(hdev, "fixup: ACER_KBD_RDESC_CHECK_DATA = %#016Xll, check = %#016Xll\n", ACER_KBD_RDESC_CHECK_DATA, check);
+		hid_info(hdev, "fixup: fixpos1 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS1]);
+		hid_info(hdev, "fixup: fixpos2 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS2]);
 
 		/* check for invalid max usages and logical 0xFFFF (2^16) */
 		if (check == ACER_KBD_RDESC_CHECK_DATA) {
@@ -54,8 +54,8 @@ static __u8 *acer_kbd_report_fixup(struct hid_device *hdev, __u8 *rdesc,
 			rdesc[ACER_KBD_RDESC_FIX_POS1] = 0x00;
 			rdesc[ACER_KBD_RDESC_FIX_POS2] = 0x00;
 
-			hid_dbg(hdev, "fixup: fixpos1 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS1]);
-			hid_dbg(hdev, "fixup: fixpos2 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS2]);
+			hid_info(hdev, "fixup: fixpos1 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS1]);
+			hid_info(hdev, "fixup: fixpos2 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS2]);
 		}
 	}
 
