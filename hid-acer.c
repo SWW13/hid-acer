@@ -40,7 +40,7 @@ static __u8 *acer_kbd_report_fixup(struct hid_device *hdev, __u8 *rdesc,
 
 	/* check for invalid descriptor */
 	if (*rsize == ACER_KBD_RDESC_ORIG_SIZE) {
-		__u64 check = *(__u64 *)(rdesc + ACER_KBD_RDESC_CHECK_POS);
+		__u64 check = be64_to_cpu(*(__be64 *)(rdesc + ACER_KBD_RDESC_CHECK_POS));
 
 		hid_info(hdev, "fixup: ACER_KBD_RDESC_CHECK_DATA = %#016Xll, check = %#016Xll\n", ACER_KBD_RDESC_CHECK_DATA, check);
 		hid_info(hdev, "fixup: fixpos1 = %#08x\n", rdesc[ACER_KBD_RDESC_FIX_POS1]);
