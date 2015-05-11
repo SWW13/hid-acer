@@ -17,8 +17,8 @@
 
 #include "hid-ids.h"
 
-/* Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID (06cb:2968)
- * and have the following issue:
+/* Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
+ * (06cb:2968 and 06CB:2991) and have the following issue:
  * - The report descriptor specifies an excessively large number of usages
  *   and logical max (2^16), which is more than HID_MAX_USAGES. This prevents
  *   proper parsing of the report descriptor.
