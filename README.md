@@ -18,8 +18,8 @@ Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
   (see e.g. http://www.cyberciti.biz/tips/build-linux-kernel-module-against-installed-kernel-source-tree.html)
 
 ```
-git clone https://github.com/SWW13/hid-synaptics.git
-cd hid-synaptics
+git clone https://github.com/SWW13/hid-acer.git
+cd hid-acer
 make
 sudo make install
 ```
