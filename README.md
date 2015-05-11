@@ -9,7 +9,6 @@ Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
 # Known broken keyboards
 * `06CB:2968`
   * Acer SW5-012
-  * Acer SW5-171
 * `06CB:2991`
   * Acer SW5-171
 
