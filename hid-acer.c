@@ -41,7 +41,7 @@ static __u8 *acer_kbd_report_fixup(struct hid_device *hdev, __u8 *rdesc,
 
 		/* check for invalid max usages and logical 0xFFFF (2^16) */
 		if (check == ACER_KBD_RDESC_CHECK_DATA) {
-			hid_info(hdev, "fixing up acer keybaord report descriptor\n");
+			hid_info(hdev, "fixing up acer keyboard report descriptor\n");
 
 			/* fix max values with 0xFF00 (2^8) */
 			rdesc[ACER_KBD_RDESC_FIX_POS1] = 0x00;
