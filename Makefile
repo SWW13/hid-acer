@@ -20,7 +20,7 @@ obj-m	:= hid-acer.o
 
 else
 
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build
+KERNELDIR ?= /lib/modules/$(KVER)/build
 PWD       := $(shell pwd)
 
 default:
