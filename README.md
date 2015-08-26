@@ -6,6 +6,9 @@ Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
    and logical max (2^16), which is more than HID_MAX_USAGES. This prevents
    proper parsing of the report descriptor.
 
+# Upstream fix
+see http://www.spinics.net/lists/linux-input/msg40080.html
+
 # Known broken keyboards
 * `06CB:2968`
   * Acer SW5-012
