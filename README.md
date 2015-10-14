@@ -8,6 +8,7 @@ Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
 
 # Upstream fix
 see http://www.spinics.net/lists/linux-input/msg40080.html
+> Applied to for-4.3/upstream
 
 # Known broken keyboards
 * `06CB:2968`
