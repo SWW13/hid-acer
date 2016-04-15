@@ -1,7 +1,7 @@
 # hid-acer kernel module
 
 Acer keyboards e.g. in Acer SW5-012 use synaptics touchpad USB ID
-(06cb:2968 and 06CB:2991) and have the following issue:
+(06cb:2968, 06CB:2991 & 06CB:74D9) and have the following issue:
  - The report descriptor specifies an excessively large number of usages
    and logical max (2^16), which is more than HID_MAX_USAGES. This prevents
    proper parsing of the report descriptor.
@@ -15,6 +15,8 @@ see http://www.spinics.net/lists/linux-input/msg40080.html
   * Acer SW5-012
 * `06CB:2991`
   * Acer SW5-171
+* `06CB:74d9`
+  * Acer SW5-171 Firmware revision 2.1
 
 # Build / Install
 * Install linux-headers (for current version) and build utils.  
